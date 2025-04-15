@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "@rocketseat/eslint-config/react"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.ts"],
+      "rules": {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+      }
+    }
+  ]
+}
