@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "@types/cookie": "^0.6.0",
     "@types/node": "22.13.7",
     "@types/react": "19.0.10",
+    "eslint": "^9.24.0",
     "prisma": "^4.16.2"
   }
 }
