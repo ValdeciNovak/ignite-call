@@ -8,7 +8,7 @@ export const IntervalBox = styled(Box, {
 
 export const IntervalContainer = styled('div', {
   border: '1px solid $gray600',
-  bordersRadius: '$md',
+  borderRadius: '$md',
   marginBottom: '$4',
 })
 
