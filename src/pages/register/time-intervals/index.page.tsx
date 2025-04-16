@@ -11,7 +11,7 @@ import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { ArrowRight } from 'phosphor-react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
-import { z } from 'zod'
+import { z, ZodType } from 'zod'
 import { api } from '../../../lib/axios'
 import { convertTimeStringToMinutes } from '../../../utils/convert-time-string-to-in-minutes'
 import { getWeekDays } from '../../../utils/get-week-days'
@@ -75,7 +75,9 @@ export default function TimeIntervals() {
     watch,
     formState: { isSubmitting, errors },
   } = useForm<TimeIntervalsFormInput>({
-    resolver: zodResolver(timeIntervalsFormSchema),
+    resolver: zodResolver(
+      timeIntervalsFormSchema as ZodType<TimeIntervalsFormInput>
+    ),
     defaultValues: {
       intervals: [
         { weekDay: 0, enabled: false, startTime: '08:00', endTime: '18:00' },
