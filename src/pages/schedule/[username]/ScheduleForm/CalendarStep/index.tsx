@@ -11,6 +11,7 @@ import {
   TimePickerItem,
   TimePickerList,
 } from './styles'
+import utc from 'dayjs/plugin/utc'
 
 interface Availability {
   possibleTimes: number[]
@@ -54,10 +55,13 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
     }
   )
 
+  dayjs.extend(utc)
+
   function handleSelectTime(hour: number) {
     const dateWithTime = dayjs(selectedDate)
       .set('hour', hour)
       .startOf('hour')
+      .utc() // Garantir que está em UTC
       .toDate()
 
     onSelectDateTime(dateWithTime)

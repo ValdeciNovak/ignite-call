@@ -108,7 +108,6 @@ export default function TimeIntervals() {
     await api.post('/users/time-intervals', {
       intervals,
     })
-    console.log('intelos em: time-instervals', intervals)
 
     await router.push('/register/update-profile')
   }
