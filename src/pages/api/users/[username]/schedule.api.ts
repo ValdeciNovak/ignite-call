@@ -1,9 +1,9 @@
 import dayjs from 'dayjs'
+import { google } from 'googleapis'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { z } from 'zod'
-import { prisma } from '../../../../lib/prisma'
-import { google } from 'googleapis'
 import { getGoogleOAuthToken } from '../../../../lib/google'
+import { prisma } from '../../../../lib/prisma'
 
 export default async function handler(
   req: NextApiRequest,
@@ -88,7 +88,9 @@ export default async function handler(
       conferenceData: {
         createRequest: {
           requestId: scheduling.id,
-          conferenceSolutionKey: { type: 'hangoutsMeet' },
+          conferenceSolutionKey: {
+            type: 'hangoutsMeet',
+          },
         },
       },
     },
