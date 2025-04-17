@@ -36,9 +36,7 @@ export default async function handler(
     req.body
   )
 
-  const schedulingDate = dayjs(date)
-    .subtract(3, 'hours') // Subtrai 3 horas
-    .startOf('hour') // Ajusta para o início da hora
+  const schedulingDate = dayjs(date).startOf('hour') // Ajusta para o início da hora
 
   if (schedulingDate.isBefore(new Date())) {
     return res.status(400).json({
@@ -64,7 +62,7 @@ export default async function handler(
       name,
       email,
       observations,
-      date: schedulingDate.toDate(),
+      date: schedulingDate.subtract(3, 'hours').toDate(),
       user_id: user.id,
     },
   })
