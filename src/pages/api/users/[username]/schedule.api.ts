@@ -36,7 +36,10 @@ export default async function handler(
     req.body
   )
 
-  const schedulingDate = dayjs(date).startOf('hour')
+  const schedulingDate = dayjs(date)
+    .utc() // Converte para UTC (se necessário)
+    .subtract(3, 'hours') // Subtrai 3 horas
+    .startOf('hour') // Ajusta para o início da hora
 
   if (schedulingDate.isBefore(new Date())) {
     return res.status(400).json({
