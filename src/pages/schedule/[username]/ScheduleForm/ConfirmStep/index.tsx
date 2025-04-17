@@ -43,7 +43,7 @@ export function ConfirmStep({
       name,
       email,
       observations,
-      date: schedulingDate,
+      date: dayjs(schedulingDate).format('YYYY-MM-DD HH:mm:ss'),
     })
 
     onCancelConfirmation()
