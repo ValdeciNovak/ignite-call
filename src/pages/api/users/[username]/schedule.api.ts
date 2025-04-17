@@ -37,6 +37,7 @@ export default async function handler(
   )
 
   const schedulingDate = dayjs(date).startOf('hour')
+  console.log('AAAAAAquiii é o scheduling DATE: ', schedulingDate)
 
   if (schedulingDate.isBefore(new Date())) {
     return res.status(400).json({
@@ -56,7 +57,6 @@ export default async function handler(
       message: 'There is another scheduling at at the same time.',
     })
   }
-
   const scheduling = await prisma.scheduling.create({
     data: {
       name,
@@ -66,9 +66,7 @@ export default async function handler(
       user_id: user.id,
     },
   })
-
   console.log('Aquiii é o scheduling: ', scheduling)
-  console.log('AAAAAAquiii é o scheduling DATE: ', schedulingDate)
 
   const calendar = google.calendar({
     version: 'v3',
