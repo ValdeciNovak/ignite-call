@@ -57,7 +57,7 @@ CREATE TABLE "schedulings" (
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "observations" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "created_at" TIMESTAMP(2) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "user_id" TEXT NOT NULL,
 
     CONSTRAINT "schedulings_pkey" PRIMARY KEY ("id")
