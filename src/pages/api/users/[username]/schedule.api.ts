@@ -67,6 +67,9 @@ export default async function handler(
     },
   })
 
+  console.log('Aquiii é o scheduling: ', scheduling)
+  console.log('AAAAAAquiii é o scheduling DATE: ', schedulingDate)
+
   const calendar = google.calendar({
     version: 'v3',
     auth: await getGoogleOAuthToken(user.id),
