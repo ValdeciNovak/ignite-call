@@ -64,6 +64,10 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
       .utc() // Garantir que está em UTC
       .toDate()
 
+
+    console.log('Data:', dateWithTime)
+    console.log('Select date:', selectedDate)
+
     onSelectDateTime(dateWithTime)
   }
 
