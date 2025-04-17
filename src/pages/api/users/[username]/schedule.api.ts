@@ -36,8 +36,9 @@ export default async function handler(
     req.body
   )
 
-  const schedulingDate = dayjs(date).startOf('hour')
-  console.log('AAAAAAquiii é o scheduling DATE: ', schedulingDate)
+  const schedulingDate = dayjs(date).startOf('hour').utc() 
+  
+  
 
   if (schedulingDate.isBefore(new Date())) {
     return res.status(400).json({
@@ -66,7 +67,7 @@ export default async function handler(
       user_id: user.id,
     },
   })
-  console.log('Aquiii é o scheduling: ', scheduling)
+
 
   const calendar = google.calendar({
     version: 'v3',
