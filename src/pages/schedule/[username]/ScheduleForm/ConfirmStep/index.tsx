@@ -39,11 +39,21 @@ export function ConfirmStep({
   async function handleConfirmScheduling(data: ConfirmFormData) {
     const { name, email, observations } = data
 
+    console.log(
+      'dayjs(schedulingDate).format(YYYY-MM-DDTHH:mm:ssZ): ',
+      dayjs(schedulingDate).format('YYYY-MM-DDTHH:mm:ssZ')
+    )
+    console.log(
+      'dayjs(schedulingDate).format(YYYY-MM-DD HH:mm:ss): ',
+      dayjs(schedulingDate).format('YYYY-MM-DD HH:mm:ss')
+    )
+    console.log('schedulingDate: ', schedulingDate)
+
     await api.post(`/users/${username}/schedule`, {
       name,
       email,
       observations,
-      date: dayjs(schedulingDate).format('YYYY-MM-DDTHH:mm:ssZ'),
+      date: schedulingDate,
     })
 
     onCancelConfirmation()
