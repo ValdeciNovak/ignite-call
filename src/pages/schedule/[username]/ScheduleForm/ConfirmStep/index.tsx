@@ -38,9 +38,7 @@ export function ConfirmStep({
 
   async function handleConfirmScheduling(data: ConfirmFormData) {
     const { name, email, observations } = data
-    console.log(
-      `Full request URL - ConfirmStep: ${api.defaults.baseURL}/users/${username}/schedule`
-    )
+
     await api.post(`/users/${username}/schedule`, {
       name,
       email,
