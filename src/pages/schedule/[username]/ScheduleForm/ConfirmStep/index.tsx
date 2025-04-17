@@ -65,26 +65,24 @@ export function ConfirmStep({
         </Text>
       </FormHeader>
 
-      {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
       <label>
         <Text size="sm">Nome completo</Text>
         <TextInput
+          crossOrigin={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
-          crossOrigin={undefined}
           placeholder="Seu nome"
           {...register('name')}
         />
         {errors.name && <FormError size="sm">{errors.name.message}</FormError>}
       </label>
 
-      {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
       <label>
         <Text size="sm">Endereço de e-mail</Text>
         <TextInput
+          crossOrigin={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}
-          crossOrigin={undefined}
           type="email"
           placeholder="johndoe@example.com"
           {...register('email')}
@@ -94,7 +92,6 @@ export function ConfirmStep({
         )}
       </label>
 
-      {/* biome-ignore lint/a11y/noLabelWithoutControl: <explanation> */}
       <label>
         <Text size="sm">Observações</Text>
         <TextArea {...register('observations')} />
