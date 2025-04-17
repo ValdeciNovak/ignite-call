@@ -37,7 +37,6 @@ export default async function handler(
   )
 
   const schedulingDate = dayjs(date)
-    .utc() // Converte para UTC (se necessário)
     .subtract(3, 'hours') // Subtrai 3 horas
     .startOf('hour') // Ajusta para o início da hora
 
