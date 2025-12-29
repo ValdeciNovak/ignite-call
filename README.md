@@ -180,9 +180,3 @@ Adicione screenshots em `public/screenshots` ou link para deploy aqui (ex.: Verc
 
 ---
 
-Se quiser, eu também posso:
-- adicionar um arquivo `.env.example` com placeholders
-- adicionar badges e link de deploy no topo do README
-- gerar imagens/GIFs de demonstração e adicioná-los ao README
-
-Diga qual próxima adição prefere e eu faço.
