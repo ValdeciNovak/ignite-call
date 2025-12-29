@@ -176,7 +176,8 @@ Adicione screenshots em `public/screenshots` ou link para deploy aqui (ex.: Verc
 
 **Autor**
 
-- Valdeci Novak — https://github.com/ValdeciNovak
+- Valdeci Novak Junior
+- GitHub: https://github.com/ValdeciNovak
 - LinkedIn - https://www.linkedin.com/in/valdecijuniordev/
 
 ---
